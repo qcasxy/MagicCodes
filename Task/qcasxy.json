@@ -4,5 +4,9 @@
   "task": [
     "20 9 * * * https://raw.githubusercontent.com/age174/-/main/ximei.js, tag=西梅, img-url=https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg, enabled=true",
     "10 8 * * * https://raw.githubusercontent.com/age174/-/main/zqwn.js, tag=最强蜗牛, img-url=https://ae01.alicdn.com/kf/U1748aeaa81a54cdf8797ed3fc54d76ef3.jpg, enabled=true",
+    "1 0 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_inter_shop_sign.js, tag=interCenter渠道店铺签到, enabled=true",
+    "15 15 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_follow_sku.js, tag=关注有礼, enabled=true",
+    "3 0,10,23 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_lottery.js, tag=店铺大转盘, enabled=true",
+    "15 12 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/car/monk_shop_add_to_car.js, tag=加购有礼, enabled=true"
   ]
 }
