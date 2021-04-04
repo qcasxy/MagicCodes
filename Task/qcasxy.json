@@ -7,6 +7,7 @@
     "1 0 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_inter_shop_sign.js, tag=interCenter渠道店铺签到, enabled=true",
     "15 15 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_follow_sku.js, tag=关注有礼, enabled=true",
     "3 0,10,23 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_lottery.js, tag=店铺大转盘, enabled=true",
-    "15 12 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/car/monk_shop_add_to_car.js, tag=加购有礼, enabled=true"
+    "15 12 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/car/monk_shop_add_to_car.js, tag=加购有礼, enabled=true",
+    "0 0,1-22/2 1-31 4-7 * https://raw.githubusercontent.com/monk-coder/dust/dust/member/monk_pasture.js, tag=有机牧场, enabled=true"
   ]
 }
