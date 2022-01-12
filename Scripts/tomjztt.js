@@ -41,12 +41,20 @@ TOM = `https://tom666.coding.net/p/tom/d/tom/git/raw/master/csurl.json`
 
 
 !(async () => {
+    
+
     if (process.env.jzreadtoken && process.env.jzreadtoken.indexOf('@') > -1) {
         jzreadTokenArr = process.env.jzreadtoken.split('@');
         console.log(`您选择的是用"@"隔开\n`)
     } else {
         jzreadTokenArr = [process.env.jzreadtoken]
     };
+    console.log(`共${jzreadTokenArr.length}个cookie`)
+
+    let temp = $.getdata('jzreadurl')
+    console.log(`cookie：${temp}`)
+
+    jzreadTokenArr = temp.split('@');
     console.log(`共${jzreadTokenArr.length}个cookie`)
 
     for (let k = 0; k < jzreadTokenArr.length; k++) {
