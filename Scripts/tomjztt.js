@@ -42,6 +42,7 @@ TOM = `https://tom666.coding.net/p/tom/d/tom/git/raw/master/csurl.json`
 
 !(async () => {
     
+    console.log(`开始`)
 
     if (process.env.jzreadtoken && process.env.jzreadtoken.indexOf('@') > -1) {
         jzreadTokenArr = process.env.jzreadtoken.split('@');
