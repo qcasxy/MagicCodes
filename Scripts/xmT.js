@@ -19,11 +19,16 @@ const headers = {
 const step = randomFriendPin($.getdata('xmMinStep')*1 || 20000, $.getdata('xmMaxStep')*1 || 25000);
 
 function login() {
-//$.setdata(user, 'xmSportsUser');
-//$.setdata(password, 'xmSportsPassword');
-
-  user = $.isNode() ? (process.env.XM_SPORT_USER ? process.env.XM_SPORT_USER : user) : ($.getdata('xmSportsUser') ? $.getdata('xmSportsUser') : user);
-  password = $.isNode() ? (process.env.XM_SPORT_PASSWORD ? process.env.XM_SPORT_PASSWORD : password) : ($.getdata('xmSportsPassword') ? $.getdata('xmSportsPassword') : password);
+  if (user) {
+    $.setdata(user, 'xmSportsUser');
+  }else {
+    user = $.isNode() ? (process.env.XM_SPORT_USER ? process.env.XM_SPORT_USER : user) : ($.getdata('xmSportsUser') ? $.getdata('xmSportsUser') : user);
+  }
+  if (password) {
+    $.setdata(password, 'xmSportsPassword');
+  }else {
+    password = $.isNode() ? (process.env.XM_SPORT_PASSWORD ? process.env.XM_SPORT_PASSWORD : password) : ($.getdata('xmSportsPassword') ? $.getdata('xmSportsPassword') : password);
+  }
 
   if (user) {
     if (password) {
@@ -39,14 +44,15 @@ function login() {
               console.log(`${JSON.stringify(err)}`)
               console.log(`${$.name} API请求失败，请检查网路重试`)
             } else {
-              console.log(`登陆结果:${data}`);
-              console.log(`登陆结果:${$.url}`);
+              console.log(`登陆结果:${resp}`);
+              console.log(`登陆结果:${$}`);
             }
           } catch (e) {
             $.logErr(e, resp)
           } finally {
             resolve();
           }
+          $.done
         })
       })
     }else {
