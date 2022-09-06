@@ -48,12 +48,14 @@ function login() {
               console.log(`登陆结果:${resp.url}`);
               console.log(`登陆结果:${resp.header}`);
               console.log(`登陆结果:${resp.body}`);
-              $.done
             }
+            $.done
           } catch (e) {
             $.logErr(e, resp)
+            $.done
           } finally {
             resolve();
+            $.done
           }
         })
       })
