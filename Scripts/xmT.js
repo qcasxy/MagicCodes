@@ -44,15 +44,15 @@ function login() {
               console.log(`${JSON.stringify(err)}`)
               console.log(`${$.name} API请求失败，请检查网路重试`)
             } else {
-              console.log(`登陆结果:${resp}`);
-              console.log(`登陆结果:${$}`);
+              console.log(`登陆结果:${resp.headers}`);
+              console.log(`登陆结果:${$.name}`);
+              $.done
             }
           } catch (e) {
             $.logErr(e, resp)
           } finally {
             resolve();
           }
-          $.done
         })
       })
     }else {
