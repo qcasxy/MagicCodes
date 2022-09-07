@@ -39,13 +39,14 @@ function login() {
           "headers": headers,
           "allow_redirects": false
         }
-        $.post(options, false, (err, resp, data) => {
+        $.post(options, (err, resp, data) => {
           try {
+            console.log(`${JSON.stringify(resp)}`)
+
             if (err) {
               console.log(`${JSON.stringify(err)}`)
               console.log(`${$.name} API请求失败，请检查网路重试`)
             } else {
-              console.log(`${JSON.stringify(resp)}`)
               console.log(`登陆结果:${resp.headers}`);
             }
             resolve();
