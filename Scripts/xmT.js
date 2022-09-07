@@ -36,22 +36,23 @@ function login() {
         const options = {
           "url": `https://api-user.huami.com/registrations/+86${user}/tokens`,
           "body": `client_id=HuaMi&password=${password}&token=access&redirect_uri=https://s3-us-west-2.amazonaws.com/hm-registration/successsignin.html`,
-          "headers": headers
+          "headers": headers,
+          "allow_redirects": false
         }
-        $.post(options, (err, resp, data) => {
+        $.post(options, false, (err, resp, data) => {
           try {
             if (err) {
               console.log(`${JSON.stringify(err)}`)
               console.log(`${$.name} API请求失败，请检查网路重试`)
             } else {
               console.log(`${JSON.stringify(resp)}`)
-              console.log(`登陆结果:${resp.url}`);
-              console.log(`登陆结果:${resp.header}`);
-              console.log(`登陆结果:${resp.body}`);
+              console.log(`登陆结果:${resp.headers}`);
             }
+            resolve();
             $.done
           } catch (e) {
             $.logErr(e, resp)
+            resolve();
             $.done
           } finally {
             resolve();
